@@ -1,0 +1,24 @@
+buildscript {
+    ext.kotlin_version = '1.0.5-2'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+subprojects {
+    apply plugin: 'kotlin'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        testCompile 'io.kotlintest:kotlintest:1.3.5'
+    }
+}
