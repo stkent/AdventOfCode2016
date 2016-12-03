@@ -1,5 +1,5 @@
 rootProject.name = 'AdventOfCode2016'
-include ':problem1'
-include 'problem2'
-include 'problem3'
+include 'day1'
+include 'day2'
+include 'day3'
 
