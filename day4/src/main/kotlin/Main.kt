@@ -5,14 +5,14 @@ class Main {
     @JvmStatic fun main(args: Array<String>) {
       val inputFile = File(Main::class.java.getResource("input.txt").file)
       
-      val validRooms = inputFile
+      val realRooms = inputFile
           .readLines()
           .map(::RoomCandidate)
           .filter(RoomCandidate::isARealRoom)
 
-      println("Part 1: sum of sector IDs of real rooms = " + validRooms.sumBy(RoomCandidate::sectorId))
+      println("Part 1: sum of sector IDs of real rooms = " + realRooms.sumBy(RoomCandidate::sectorId))
       
-      validRooms
+      realRooms
           .filter { it.getDecryptedRoomName() == "northpole object storage" }
           .forEach { println("Part 2: North Pole object storage room is in sector ${it.sectorId}") }
     }
