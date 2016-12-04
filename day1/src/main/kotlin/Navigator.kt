@@ -1,7 +1,7 @@
 import Orientation.*
 import RotationDirection.LEFT
 import RotationDirection.RIGHT
-import extensions.abs
+import java.lang.Math.abs
 
 class Navigator {
 
@@ -10,7 +10,7 @@ class Navigator {
   private var position = Pair(0, 0)
 
   private val distanceFromOrigin: Int
-    get() = position.first.abs() + position.second.abs()
+    get() = abs(position.first) + abs(position.second)
 
   fun computeDistanceToFinalLocation(instructions: List<Instruction>): Int {
     instructions.forEach { instruction ->
