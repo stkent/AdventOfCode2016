@@ -1,5 +1,6 @@
-import java.util.*
 import java.util.regex.Pattern
+import kotlin.comparisons.compareByDescending
+import kotlin.comparisons.thenBy
 
 class RoomCandidate(identifyingString: String) {
   
@@ -29,10 +30,11 @@ class RoomCandidate(identifyingString: String) {
         .groupBy { it }                              // Group characters by character:         {b=[b], a=[a, a], e=[e], c=[c]}
         .mapValues { it.value.size }                 // Convert values from lists to lengths:  {b=1, a=2, e=1, c=1}
         .entries                                     // Convert map to a set of entries:       [b=1, a=2, e=1, c=1]
-        .groupBy({ it.value }, { it.key })           // Group by value; old keys = new values: {1: [b, e, c], 2: [a]}
-        .toSortedMap(Comparator { v1, v2 -> v2-v1 }) // Sort by key (highest count first):     {2: [a], 1: [b, e, c]}
-        .mapValues { it.value.sorted() }             // Sort values individually:              {2: [a], 1: [b, c, e]}
-        .flatMap{ it.value }                         // Concatenate values:                    [a, b, c, e]
+        .toSortedSet(                                // Sort entries by count then character:  [a=2, b=1, c=1, e=1]
+            compareByDescending<Map.Entry<Char, Int>> { it.value }
+           .thenBy { it.key }
+        )
+        .map { it.key }                              // Replace full entries by keys:          [a, b, c, e]
         .take(5)                                     // Take at most 5 characters:             [a, b, c, e]
         .joinToString(separator = "")                // Form a single string:                  "abce"
     
