@@ -44,7 +44,6 @@ fun <T : Comparable<T>> Collection<T>.getHighestFrequencyElement(tieBreaker: Com
       .key
 }
 
-// todo: reduce duplication
 fun <T : Comparable<T>> Collection<T>.getLowestFrequencyElement(tieBreaker: Comparator<T>): T {
   return this.groupBy { it }
       .mapValues { it.value.size }
