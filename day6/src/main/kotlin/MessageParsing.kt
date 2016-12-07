@@ -6,35 +6,26 @@ import kotlin.comparisons.thenBy
 data class MessageParser(val receivedMessages: List<String>) {
 
   fun parseUsingHighestFrequencyCharacters(): String {
-    val characterFrequencyCollection = mutableListOf<OffsetChar>()
-
-    receivedMessages.forEach { receivedMessage ->
-      (0 until receivedMessage.length).mapTo(characterFrequencyCollection) {
-        OffsetChar(it, receivedMessage[it])
-      }
-    }
-
-    return characterFrequencyCollection
-        .groupBy { it.offset }
-        .mapValues { it.value.map(OffsetChar::char) }
-        .mapValues { it.value.getHighestFrequencyElement(Comparator(Char::compareTo)) }
-        .map { it.value }
-        .joinToString(separator = "")
+    return parse { candidateChars -> candidateChars.getHighestFrequencyElement(Comparator(Char::compareTo)) }
   }
 
   fun parseUsingLowestFrequencyCharacters(): String {
-    val characterFrequencyCollection = mutableListOf<OffsetChar>()
+    return parse { candidateChars -> candidateChars.getLowestFrequencyElement(Comparator(Char::compareTo)) }
+  }
+
+  private fun parse(realCharacterIdentifier: (List<Char>) -> Char): String {
+    val characterFrequencyCollection = mutableListOf<IndexedChar>()
 
     receivedMessages.forEach { receivedMessage ->
       (0 until receivedMessage.length).mapTo(characterFrequencyCollection) {
-        OffsetChar(it, receivedMessage[it])
+        IndexedChar(it, receivedMessage[it])
       }
     }
 
     return characterFrequencyCollection
-        .groupBy { it.offset }
-        .mapValues { it.value.map(OffsetChar::char) }
-        .mapValues { it.value.getLowestFrequencyElement(Comparator(Char::compareTo)) }
+        .groupBy { it.index }
+        .mapValues { it.value.map(IndexedChar::char) }
+        .mapValues { realCharacterIdentifier(it.value) }
         .map { it.value }
         .joinToString(separator = "")
   }
@@ -66,4 +57,4 @@ fun <T : Comparable<T>> Collection<T>.getLowestFrequencyElement(tieBreaker: Comp
       .key
 }
 
-data class OffsetChar(val offset: Int, val char: Char)
+private data class IndexedChar(val index: Int, val char: Char)
