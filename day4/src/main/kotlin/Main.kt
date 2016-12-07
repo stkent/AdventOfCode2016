@@ -11,11 +11,11 @@ class Main {
           .map(::RoomCandidate)
           .filter(RoomCandidate::isARealRoom)
 
-      println("Part 1: sum of sector IDs of real rooms = ${realRooms.sumBy(RoomCandidate::sectorId)}")
+      println("Part 1: ${realRooms.sumBy(RoomCandidate::sectorId)}")
 
       realRooms
           .filter { it.getDecryptedRoomName() == "northpole object storage" }
-          .forEach { println("Part 2: North Pole object storage room is in sector ${it.sectorId}") }
+          .forEach { println("Part 2: ${it.sectorId}") }
     }
   }
 

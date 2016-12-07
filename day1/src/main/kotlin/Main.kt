@@ -9,9 +9,6 @@ fun main(args: Array<String>) {
 
   val instructions = input.split(", ").map(::Instruction)
 
-  println("Part 1: number of blocks to Easter Bunny Headquarters: " +
-      Navigator().computeDistanceToFinalLocation(instructions))
-
-  println("Part 2: number of blocks to Easter Bunny Headquarters: " +
-      Navigator().computeDistanceToFirstLocationVisitedTwice(instructions))
+  println("Part 1: ${Navigator().computeDistanceToFinalLocation(instructions)}")
+  println("Part 2: ${Navigator().computeDistanceToFirstLocationVisitedTwice(instructions)}")
 }

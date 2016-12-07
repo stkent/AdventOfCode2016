@@ -9,8 +9,8 @@ class Main {
 
       val receivedMessages = inputFile.readLines()
 
-      println(MessageParser(receivedMessages).parseUsingHighestFrequencyCharacters())
-      println(MessageParser(receivedMessages).parseUsingLowestFrequencyCharacters())
+      println("Part 1: ${MessageParser(receivedMessages).parseUsingHighestFrequencyCharacters()}")
+      println("Part 2: ${MessageParser(receivedMessages).parseUsingLowestFrequencyCharacters()}")
     }
   }
 

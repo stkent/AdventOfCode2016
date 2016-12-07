@@ -27,10 +27,6 @@ fun main(args: Array<String>) {
           "RDLDDRLULUULRDRURLUURDRDUURUDLRR"
   )
 
-  println("Part 1: bathroom PIN at Easter Bunny Headquarters: " +
-      SquarePadPinCalculator().calculatePinFromInstructions(input))
-
-  println("Part 2: bathroom PIN at Easter Bunny Headquarters: " +
-      DiamondPadPinCalculator().calculatePinFromInstructions(input))
-
+  println("Part 1: ${SquarePadPinCalculator().calculatePinFromInstructions(input)}")
+  println("Part 2: ${DiamondPadPinCalculator().calculatePinFromInstructions(input)}")
 }
