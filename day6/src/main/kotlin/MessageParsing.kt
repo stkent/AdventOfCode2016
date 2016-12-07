@@ -44,7 +44,6 @@ data class MessageParser(val receivedMessages: List<String>) {
 fun <T : Comparable<T>> Collection<T>.getHighestFrequencyElement(tieBreaker: Comparator<T>): T {
   return this.groupBy { it }
       .mapValues { it.value.size }
-      // todo: replace with toSortedMap?
       .entries
       .toSortedSet(
           compareByDescending(selector = Map.Entry<T, Int>::value)
@@ -58,7 +57,6 @@ fun <T : Comparable<T>> Collection<T>.getHighestFrequencyElement(tieBreaker: Com
 fun <T : Comparable<T>> Collection<T>.getLowestFrequencyElement(tieBreaker: Comparator<T>): T {
   return this.groupBy { it }
       .mapValues { it.value.size }
-      // todo: replace with toSortedMap?
       .entries
       .toSortedSet(
           compareBy(selector = Map.Entry<T, Int>::value)
