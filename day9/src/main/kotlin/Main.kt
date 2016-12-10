@@ -7,8 +7,10 @@ class Main {
       val inputFile = File(Main::class.java.getResource("input.txt").file)
 
       inputFile.forEachLine {
-        println("Part 1: ${Decrypter(it).lengthWhenDecryptedUsingFormat1()}")
+        println("Part 1: ${Decrypter(it).calculateLengthUsingAlgorithm1()}")
+        println("Part 2: ${Decrypter(it).calculateLengthUsingAlgorithm2()}")
       }
+
     }
   }
 

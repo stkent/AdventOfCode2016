@@ -1,43 +1,47 @@
-import java.lang.Math.min
-
 data class Decrypter(private val encryptedString: String) {
 
   companion object {
     private val MARKER_REGEX = Regex("\\((\\d+)x(\\d+)\\)")
   }
 
-  fun decryptUsingFormat1(): String {
-    var latestMarker: MatchResult? = MARKER_REGEX.find(encryptedString) ?: return encryptedString
-
-    var result = ""
-    var remainingStringToDecrypt = encryptedString
-
-    while (latestMarker != null) {
-      result += remainingStringToDecrypt.substring(0 until latestMarker.range.first)
-
-      val firstIndexOfRangeToRepeat = latestMarker.range.last + 1
-      val targetLengthOfRangeToRepeat = latestMarker.groupValues[1].toInt()
-      val actualLengthOfRangeToRepeat = min(targetLengthOfRangeToRepeat, remainingStringToDecrypt.lastIndex)
-      val lastIndexOfRangeToRepeat = firstIndexOfRangeToRepeat + actualLengthOfRangeToRepeat - 1
-
-      val stringToRepeat = remainingStringToDecrypt.substring(firstIndexOfRangeToRepeat..lastIndexOfRangeToRepeat)
-      result += stringToRepeat.repeat(latestMarker.groupValues[2].toInt())
-
-      remainingStringToDecrypt = remainingStringToDecrypt.removeRange(0..lastIndexOfRangeToRepeat)
-
-      latestMarker = MARKER_REGEX.find(remainingStringToDecrypt)
-    }
-
-    result += remainingStringToDecrypt
-    return result
+  fun calculateLengthUsingAlgorithm1(): Int {
+    return lengthV1(encryptedString)
   }
 
-  fun lengthWhenDecryptedUsingFormat1(): Int {
-    return decryptUsingFormat1().length
+  private fun lengthV1(string: String): Int {
+    val leftmostMarker = MARKER_REGEX.find(string) ?: return string.length
+
+    val markerStartIndex = leftmostMarker.range.first
+    val markerEndIndex = leftmostMarker.range.last
+    val numberOfCharsToRepeat = leftmostMarker.groupValues[1].toInt()
+    val numberOfRepeats = leftmostMarker.groupValues[2].toInt()
+
+    // Count leading characters (to the left of the processed group).
+    return markerStartIndex +
+        // Markers _within_ the target marker group are not expanded.
+        numberOfCharsToRepeat * numberOfRepeats +
+        // Process the remaining string (to the right of the processed group).
+        lengthV1(string.substring(markerEndIndex + numberOfCharsToRepeat + 1))
   }
 
-  fun lengthWhenDecryptedUsingFormat2(): Int {
-    return 0
+  fun calculateLengthUsingAlgorithm2(): Long {
+    return lengthV2(encryptedString)
+  }
+
+  private fun lengthV2(string: String): Long {
+    val leftmostMarker = MARKER_REGEX.find(string) ?: return string.length.toLong()
+
+    val markerStartIndex = leftmostMarker.range.first
+    val markerEndIndex = leftmostMarker.range.last
+    val numberOfCharsToRepeat = leftmostMarker.groupValues[1].toInt()
+    val numberOfRepeats = leftmostMarker.groupValues[2].toInt()
+
+    // Count leading characters (to the left of the processed group).
+    return markerStartIndex +
+        // Markers within the target marker group are themselves expanded post-duplication.
+        numberOfRepeats * lengthV2(string.substring(markerEndIndex + 1..markerEndIndex + numberOfCharsToRepeat)) +
+        // Process the remaining string (to the right of the processed group).
+        lengthV2(string.substring(markerEndIndex + numberOfCharsToRepeat + 1))
   }
 
 }
