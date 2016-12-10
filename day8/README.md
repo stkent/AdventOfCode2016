@@ -8,7 +8,7 @@ To get past the door, you first swipe a keycard (no problem; there was one on a 
 
 Unfortunately, the screen has been smashed. After a few minutes, you've taken everything apart and figured out how it works. Now you just have to work out what the screen would have displayed.
 
-The magnetic strip on the card you swiped encodes a series of instructions for the screen; these instructions are your puzzle input. The screen is 50 pixels wide and 6 pixels tall, all of which start off, and is capable of three somewhat peculiar operations:
+The magnetic strip on the card you swiped encodes a series of rawInstructions for the screen; these rawInstructions are your puzzle input. The screen is 50 pixels wide and 6 pixels tall, all of which start off, and is capable of three somewhat peculiar operations:
 
 - `rect AxB` turns on all of the pixels in a rectangle at the top-left of the screen which is `A` wide and `B` tall.
 - `rotate row y=A` by `B` shifts all of the pixels in row `A` (`0` is the top row) right by `B` pixels. Pixels that would fall off the right end appear at the left end of the row.
