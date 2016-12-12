@@ -1,0 +1,2 @@
+// Marker interface
+interface Component
