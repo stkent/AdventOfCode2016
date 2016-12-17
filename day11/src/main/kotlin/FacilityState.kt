@@ -23,15 +23,7 @@ data class FacilityState private constructor(
     }
   }
 
-  fun setStepsFromInitialState(stepsFromInitialState: Int): FacilityState {
-    return copy(stepsFromInitialState = stepsFromInitialState)
-  }
-
-  fun setParentState(parentState: FacilityState): FacilityState {
-    return copy(parentState = parentState)
-  }
-
-  fun getValidNextStates(stepsFromInitialState: Int): Set<FacilityState> {
+  fun getValidNextStates(): Set<FacilityState> {
     val componentCombos = floors[elevatorFloorNumber]!!
         .powerSet()
         .filter { it.isNotEmpty() && it.size <= 2 }
@@ -41,13 +33,34 @@ data class FacilityState private constructor(
         .map { adjacentFloor ->
           componentCombos.map { components ->
             moveComponents(components, fromFloor = elevatorFloorNumber, toFloor = adjacentFloor)
-                .setStepsFromInitialState(stepsFromInitialState)
-                .setParentState(this)
           }
         }
         .flatten()
         .filter(FacilityState::isValid)
         .toSet()
+  }
+
+  fun isEquivalentTo(facilityState: FacilityState): Boolean {
+    if (facilityState.elevatorFloorNumber != elevatorFloorNumber) {
+      return false
+    }
+
+    return facilityState.getElementPairs().size == getElementPairs().size &&
+        facilityState.getElementPairs().containsAll(getElementPairs()) &&
+        getElementPairs().containsAll(facilityState.getElementPairs())
+  }
+
+  private fun getElementPairs(): Collection<Pair<Int, Int>> {
+    return floors
+        .entries
+        .map {
+          it.value.map { component -> Pair(component.element, it.key) }
+        }
+        .flatten()
+        .groupBy { it.first }
+        .mapValues { it.value.map { it.second } }
+        .mapValues { Pair(it.value[0], it.value[1]) }
+        .values
   }
 
   private fun moveComponents(components: Set<Component>, fromFloor: Int, toFloor: Int): FacilityState {

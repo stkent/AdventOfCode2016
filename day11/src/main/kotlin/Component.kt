@@ -1,2 +1,5 @@
-// Marker interface
-interface Component
+interface Component {
+
+  val element: Element
+
+}

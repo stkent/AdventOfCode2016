@@ -63,19 +63,18 @@ class Main {
 
         if (currentFacilityState == targetState) {
           println("Part 1: $currentStepNumber")
-
-//          var facilityStateToPrint: FacilityState? = currentFacilityState
-//
-//          for (i in currentStepNumber downTo 1) {
-//            println(facilityStateToPrint!!.parentState)
-//            facilityStateToPrint = facilityStateToPrint.parentState
-//          }
-
           break
         } else {
           val nextStepNumber = currentStepNumber + 1
 
-          val newFacilityStatesToVisit = currentFacilityState.getValidNextStates(nextStepNumber) - facilityStatesToVisit
+          val newFacilityStatesToVisit =
+              currentFacilityState.getValidNextStates()
+                  .minus(facilityStatesToVisit)
+                  .filter { newFacilityState ->
+                    facilityStatesToVisit.all { !newFacilityState.isEquivalentTo(it) }
+                  }
+                  .map { it.copy(stepsFromInitialState = nextStepNumber) }
+                  .map { it.copy(parentState = currentFacilityState) }
 
           facilityStatesToVisit.addAll(newFacilityStatesToVisit)
           facilityStatesToVisit.remove(currentFacilityState)
