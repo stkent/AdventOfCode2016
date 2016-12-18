@@ -77,8 +77,8 @@ data class FacilityState private constructor(
 
   private fun getAdjacentFloors(floor: Int): Set<Int> {
     return when (floor) {
-      0 -> setOf(1)
-      floors.lastKey() -> setOf(floors.lastKey() - 1)
+      floors.firstKey() -> setOf(floor + 1)
+      floors.lastKey() -> setOf(floor - 1)
       else -> setOf(floor + 1, floor - 1)
     }
   }
@@ -95,8 +95,10 @@ data class FacilityState private constructor(
 
   private fun isValid(): Boolean {
     return floors.values.all { components ->
-      val floorContainsGenerator = components.any { it is Generator }
-      val allChipsPowered = components.all { if (it is Chip) components.contains(it.complementaryGenerator) else true }
+      val floorContainsGenerator = components.any { component -> component is Generator }
+      val allChipsPowered = components.all { component ->
+        if (component is Chip) components.contains(component.complementaryGenerator) else true
+      }
 
       !floorContainsGenerator || allChipsPowered
     }

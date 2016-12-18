@@ -6,6 +6,26 @@ class FacilityStateTests : BehaviorSpec() {
 
   init {
     Given("") {
+      val state = FacilityState.newInstance(
+          floors = sortedMapOf(
+              Pair(3, setOf()),
+              Pair(2, setOf(Generator(Lithium))),
+              Pair(1, setOf(Generator(Hydrogen))),
+              Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
+          ),
+          elevatorFloorNumber = 3
+      )
+
+      When("") {
+        val stateIsEquivalentToItself = state.isEquivalentTo(state)
+
+        Then("") {
+          stateIsEquivalentToItself shouldBe true
+        }
+      }
+    }
+
+    Given("") {
       When("") {
         Then("") {
           val state1 = FacilityState.newInstance(
@@ -85,6 +105,24 @@ class FacilityStateTests : BehaviorSpec() {
           )
 
           state1.isEquivalentTo(state2) shouldBe true
+        }
+      }
+    }
+
+    Given("") {
+      When("") {
+        Then("") {
+          val state = FacilityState.newInstance(
+              floors = sortedMapOf(
+                  Pair(3, setOf(Generator(Lithium))),
+                  Pair(2, setOf(Generator(Hydrogen))),
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium))),
+                  Pair(0, setOf())
+              ),
+              elevatorFloorNumber = 1
+          )
+
+          state.getValidNextStates() shouldBe emptySet<FacilityState>()
         }
       }
     }

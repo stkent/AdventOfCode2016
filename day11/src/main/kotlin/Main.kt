@@ -48,18 +48,13 @@ class Main {
           elevatorFloorNumber = 3
       )
 
+      val visitedFacilityStates = mutableSetOf<FacilityState>()
       val facilityStatesToVisit = mutableSetOf(initialState)
-
-      var currentSearchDepth = 0
+      var trackedStepNumber = 0
 
       while (facilityStatesToVisit.isNotEmpty()) {
         val currentFacilityState = facilityStatesToVisit.first()
         val currentStepNumber = currentFacilityState.stepsFromInitialState!!
-
-        if (currentStepNumber != currentSearchDepth) {
-          currentSearchDepth = currentStepNumber
-          println("Current search depth: $currentSearchDepth")
-        }
 
         if (currentFacilityState == targetState) {
           println("Part 1: $currentStepNumber")
@@ -67,17 +62,25 @@ class Main {
         } else {
           val nextStepNumber = currentStepNumber + 1
 
+          if (currentStepNumber != trackedStepNumber) {
+            println("Current step number: $currentStepNumber")
+            trackedStepNumber = currentStepNumber
+          }
+
           val newFacilityStatesToVisit =
               currentFacilityState.getValidNextStates()
-                  .minus(facilityStatesToVisit)
                   .filter { newFacilityState ->
-                    facilityStatesToVisit.all { !newFacilityState.isEquivalentTo(it) }
+                    !(visitedFacilityStates union facilityStatesToVisit).contains(newFacilityState)
                   }
+//                  .filter { newFacilityState ->
+//                    (visitedFacilityStates union facilityStatesToVisit).none { newFacilityState.isEquivalentTo(it) }
+//                  }
                   .map { it.copy(stepsFromInitialState = nextStepNumber) }
                   .map { it.copy(parentState = currentFacilityState) }
 
           facilityStatesToVisit.addAll(newFacilityStatesToVisit)
           facilityStatesToVisit.remove(currentFacilityState)
+          visitedFacilityStates.add(currentFacilityState)
         }
       }
     }
