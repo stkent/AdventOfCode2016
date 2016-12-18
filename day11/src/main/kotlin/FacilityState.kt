@@ -10,7 +10,7 @@ data class FacilityState private constructor(
   companion object {
     fun newInstance(
         floors: SortedMap<Int, Set<Component>>,
-        elevatorFloorNumber: Int = 0,
+        elevatorFloorNumber: Int,
         stepsFromInitialState: Int? = null,
         parentState: FacilityState? = null): FacilityState {
 

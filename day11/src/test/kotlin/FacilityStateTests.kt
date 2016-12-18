@@ -8,12 +8,12 @@ class FacilityStateTests : BehaviorSpec() {
     Given("") {
       val state = FacilityState.newInstance(
           floors = sortedMapOf(
-              Pair(3, setOf()),
-              Pair(2, setOf(Generator(Lithium))),
-              Pair(1, setOf(Generator(Hydrogen))),
-              Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
+              Pair(4, setOf()),
+              Pair(3, setOf(Generator(Lithium))),
+              Pair(2, setOf(Generator(Hydrogen))),
+              Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
           ),
-          elevatorFloorNumber = 3
+          elevatorFloorNumber = 4
       )
 
       When("") {
@@ -28,16 +28,16 @@ class FacilityStateTests : BehaviorSpec() {
     Given("two facility states with two complementary components each, with component locations switched") {
       val state1 = FacilityState.newInstance(
           floors = sortedMapOf(
-              Pair(1, setOf(Generator(Hydrogen))),
-              Pair(0, setOf(Chip(Hydrogen)))
+              Pair(2, setOf(Generator(Hydrogen))),
+              Pair(1, setOf(Chip(Hydrogen)))
           ),
           elevatorFloorNumber = 1
       )
 
       val state2 = FacilityState.newInstance(
           floors = sortedMapOf(
-              Pair(1, setOf(Chip(Hydrogen))),
-              Pair(0, setOf(Generator(Hydrogen)))
+              Pair(2, setOf(Chip(Hydrogen))),
+              Pair(1, setOf(Generator(Hydrogen)))
           ),
           elevatorFloorNumber = 1
       )
@@ -56,48 +56,20 @@ class FacilityStateTests : BehaviorSpec() {
         Then("") {
           val state1 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(3, setOf()),
-                  Pair(2, setOf(Generator(Lithium))),
-                  Pair(1, setOf(Generator(Hydrogen))),
-                  Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
-              ),
-              elevatorFloorNumber = 0
-          )
-
-          val state2 = FacilityState.newInstance(
-              floors = sortedMapOf(
-                  Pair(3, setOf()),
-                  Pair(2, setOf(Generator(Lithium))),
-                  Pair(1, setOf(Generator(Hydrogen))),
-                  Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
-              ),
-              elevatorFloorNumber = 1
-          )
-
-          state1.isEquivalentTo(state2) shouldBe false
-        }
-      }
-    }
-
-    Given("") {
-      When("") {
-        Then("") {
-          val state1 = FacilityState.newInstance(
-              floors = sortedMapOf(
-                  Pair(3, setOf()),
-                  Pair(2, setOf(Generator(Lithium))),
-                  Pair(1, setOf(Generator(Hydrogen))),
-                  Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
-              ),
-              elevatorFloorNumber = 2
-          )
-
-          val state2 = FacilityState.newInstance(
-              floors = sortedMapOf(
+                  Pair(4, setOf()),
                   Pair(3, setOf(Generator(Lithium))),
-                  Pair(2, setOf()),
-                  Pair(1, setOf(Generator(Hydrogen))),
-                  Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
+                  Pair(2, setOf(Generator(Hydrogen))),
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
+              ),
+              elevatorFloorNumber = 1
+          )
+
+          val state2 = FacilityState.newInstance(
+              floors = sortedMapOf(
+                  Pair(4, setOf()),
+                  Pair(3, setOf(Generator(Lithium))),
+                  Pair(2, setOf(Generator(Hydrogen))),
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
               ),
               elevatorFloorNumber = 2
           )
@@ -112,20 +84,48 @@ class FacilityStateTests : BehaviorSpec() {
         Then("") {
           val state1 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(3, setOf()),
-                  Pair(2, setOf(Generator(Lithium))),
-                  Pair(1, setOf(Generator(Hydrogen))),
-                  Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
+                  Pair(4, setOf()),
+                  Pair(3, setOf(Generator(Lithium))),
+                  Pair(2, setOf(Generator(Hydrogen))),
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
               ),
-              elevatorFloorNumber = 1
+              elevatorFloorNumber = 2
           )
 
           val state2 = FacilityState.newInstance(
               floors = sortedMapOf(
+                  Pair(4, setOf(Generator(Lithium))),
                   Pair(3, setOf()),
                   Pair(2, setOf(Generator(Hydrogen))),
-                  Pair(1, setOf(Generator(Lithium))),
-                  Pair(0, setOf(Chip(Hydrogen), Chip(Lithium)))
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
+              ),
+              elevatorFloorNumber = 2
+          )
+
+          state1.isEquivalentTo(state2) shouldBe false
+        }
+      }
+    }
+
+    Given("") {
+      When("") {
+        Then("") {
+          val state1 = FacilityState.newInstance(
+              floors = sortedMapOf(
+                  Pair(4, setOf()),
+                  Pair(3, setOf(Generator(Lithium))),
+                  Pair(2, setOf(Generator(Hydrogen))),
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
+              ),
+              elevatorFloorNumber = 1
+          )
+
+          val state2 = FacilityState.newInstance(
+              floors = sortedMapOf(
+                  Pair(4, setOf()),
+                  Pair(3, setOf(Generator(Hydrogen))),
+                  Pair(2, setOf(Generator(Lithium))),
+                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
               ),
               elevatorFloorNumber = 1
           )
@@ -140,10 +140,10 @@ class FacilityStateTests : BehaviorSpec() {
 //        Then("") {
 //          val state = FacilityState.newInstance(
 //              floors = sortedMapOf(
-//                  Pair(3, setOf(Generator(Lithium))),
-//                  Pair(2, setOf(Generator(Hydrogen))),
-//                  Pair(1, setOf(Chip(Hydrogen), Chip(Lithium))),
-//                  Pair(0, setOf())
+//                  Pair(4, setOf(Generator(Lithium))),
+//                  Pair(3, setOf(Generator(Hydrogen))),
+//                  Pair(2, setOf(Chip(Hydrogen), Chip(Lithium))),
+//                  Pair(1, setOf())
 //              ),
 //              elevatorFloorNumber = 1
 //          )
