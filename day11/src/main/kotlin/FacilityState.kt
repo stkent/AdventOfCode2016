@@ -23,6 +23,30 @@ data class FacilityState private constructor(
     }
   }
 
+  private val elements: Set<Element>
+
+  init {
+    val chipElements = floors
+        .values
+        .flatten()
+        .filter { component -> component is Chip }
+        .map(Component::element)
+        .toSet()
+
+    val generatorElements = floors
+        .values
+        .flatten()
+        .filter { component -> component is Generator }
+        .map(Component::element)
+        .toSet()
+
+    if (chipElements != generatorElements) {
+      throw IllegalStateException("Chips and generators must be provided in pairs!")
+    }
+
+    elements = chipElements
+  }
+
   fun getValidNextStates(): Set<FacilityState> {
     val componentCombos = floors[elevatorFloorNumber]!!
         .powerSet()
@@ -51,16 +75,11 @@ data class FacilityState private constructor(
   }
 
   private fun getElementPairs(): Collection<Pair<Int, Int>> {
-    return floors
-        .entries
-        .map {
-          it.value.map { component -> Pair(component.element, it.key) }
-        }
-        .flatten()
-        .groupBy { it.first }
-        .mapValues { it.value.map { it.second } }
-        .mapValues { Pair(it.value[0], it.value[1]) }
-        .values
+    return elements.map { element ->
+      val chipFloor = floors.filter { floor -> floor.value.contains(Chip(element)) }.keys.first()
+      val generatorFloor = floors.filter { floor -> floor.value.contains(Generator(element)) }.keys.first()
+      Pair(chipFloor, generatorFloor)
+    }
   }
 
   private fun moveComponents(components: Set<Component>, fromFloor: Int, toFloor: Int): FacilityState {
