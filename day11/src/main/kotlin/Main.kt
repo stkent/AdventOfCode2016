@@ -1,6 +1,4 @@
 import Element.*
-import com.sun.tools.javac.jvm.Gen
-import extensions.powerSet
 
 class Main {
 
@@ -48,8 +46,8 @@ class Main {
           elevatorFloorNumber = 3
       )
 
-      val visitedFacilityStates = mutableSetOf<FacilityState>()
-      val facilityStatesToVisit = mutableSetOf(initialState)
+      val visitedFacilityStates = mutableListOf<FacilityState>()
+      val facilityStatesToVisit = mutableListOf(initialState)
       var trackedStepNumber = 0
 
       while (facilityStatesToVisit.isNotEmpty()) {
@@ -70,11 +68,8 @@ class Main {
           val newFacilityStatesToVisit =
               currentFacilityState.getValidNextStates()
                   .filter { newFacilityState ->
-                    !(visitedFacilityStates union facilityStatesToVisit).contains(newFacilityState)
+                    (visitedFacilityStates union facilityStatesToVisit).none { newFacilityState.isEquivalentTo(it) }
                   }
-//                  .filter { newFacilityState ->
-//                    (visitedFacilityStates union facilityStatesToVisit).none { newFacilityState.isEquivalentTo(it) }
-//                  }
                   .map { it.copy(stepsFromInitialState = nextStepNumber) }
                   .map { it.copy(parentState = currentFacilityState) }
 
