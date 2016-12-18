@@ -36,13 +36,6 @@ class Main {
           stepsFromInitialState = 0
       )
 
-      println(sortedMapOf(
-          Pair(4, setOf()),
-          Pair(3, setOf(Generator(Promethium), Chip(Promethium), Generator(Ruthenium), Chip(Ruthenium))),
-          Pair(2, setOf(Chip(Plutonium), Chip(Strontium))),
-          Pair(1, setOf(Generator(Thulium), Chip(Thulium), Generator(Plutonium), Generator(Strontium)))
-      ))
-
       val targetState = FacilityState.newInstance(
           floors = sortedMapOf(
               Pair(4, setOf(Generator(Promethium), Chip(Promethium), Generator(Ruthenium), Chip(Ruthenium), Chip(Plutonium), Chip(Strontium), Generator(Thulium), Chip(Thulium), Generator(Plutonium), Generator(Strontium))),
