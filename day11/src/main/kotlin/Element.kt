@@ -1,4 +1,6 @@
 enum class Element(val abbreviation: String) {
+  Cobalt("Co"),
+  Curium("Cm"),
   Hydrogen("H"),
   Lithium("Li"),
   Plutonium("Pu"),
