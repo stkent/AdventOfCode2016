@@ -71,7 +71,6 @@ class Main {
                     (visitedFacilityStates union facilityStatesToVisit).none { newFacilityState.isEquivalentTo(it) }
                   }
                   .map { it.copy(stepsFromInitialState = nextStepNumber) }
-                  .map { it.copy(parentState = currentFacilityState) }
 
           facilityStatesToVisit.addAll(newFacilityStatesToVisit)
           facilityStatesToVisit.remove(currentFacilityState)

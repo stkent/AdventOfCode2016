@@ -4,21 +4,18 @@ import java.util.*
 data class FacilityState private constructor(
     val floors: SortedMap<Int, Set<Component>>,
     val elevatorFloorNumber: Int,
-    val stepsFromInitialState: Int?,
-    val parentState: FacilityState?) {
+    val stepsFromInitialState: Int?) {
 
   companion object {
     fun newInstance(
         floors: SortedMap<Int, Set<Component>>,
         elevatorFloorNumber: Int,
-        stepsFromInitialState: Int? = null,
-        parentState: FacilityState? = null): FacilityState {
+        stepsFromInitialState: Int? = null): FacilityState {
 
       return FacilityState(
           floors = floors,
           elevatorFloorNumber = elevatorFloorNumber,
-          stepsFromInitialState = stepsFromInitialState,
-          parentState = parentState
+          stepsFromInitialState = stepsFromInitialState
       )
     }
   }
