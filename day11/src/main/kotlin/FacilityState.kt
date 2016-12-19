@@ -1,3 +1,4 @@
+import extensions.countsByKey
 import extensions.powerSet
 import java.util.*
 
@@ -66,17 +67,17 @@ data class FacilityState private constructor(
       return false
     }
 
-    return facilityState.getElementPairs().size == getElementPairs().size &&
-        facilityState.getElementPairs().containsAll(getElementPairs()) &&
-        getElementPairs().containsAll(facilityState.getElementPairs())
+    return facilityState.getElementPairCounts() == getElementPairCounts()
   }
 
-  private fun getElementPairs(): Collection<Pair<Int, Int>> {
-    return elements.map { element ->
-      val chipFloor = floors.filter { floor -> floor.value.contains(Chip(element)) }.keys.first()
-      val generatorFloor = floors.filter { floor -> floor.value.contains(Generator(element)) }.keys.first()
-      Pair(chipFloor, generatorFloor)
-    }
+  private fun getElementPairCounts(): Map<Pair<Int, Int>, Int> {
+    return elements
+        .map { element ->
+          val chipFloor = floors.filter { floor -> floor.value.contains(Chip(element)) }.keys.first()
+          val generatorFloor = floors.filter { floor -> floor.value.contains(Generator(element)) }.keys.first()
+          Pair(chipFloor, generatorFloor)
+        }
+        .countsByKey()
   }
 
   private fun moveComponents(components: Set<Component>, fromFloor: Int, toFloor: Int): FacilityState {

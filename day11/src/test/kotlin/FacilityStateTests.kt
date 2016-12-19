@@ -52,6 +52,32 @@ class FacilityStateTests : BehaviorSpec() {
     }
 
     Given("") {
+      val state1 = FacilityState.newInstance(
+          floors = sortedMapOf(
+              Pair(2, setOf(Generator(Hydrogen), Chip(Lithium), Generator(Lithium))),
+              Pair(1, setOf(Chip(Hydrogen)))
+          ),
+          elevatorFloorNumber = 1
+      )
+
+      val state2 = FacilityState.newInstance(
+          floors = sortedMapOf(
+              Pair(2, setOf(Chip(Hydrogen))),
+              Pair(1, setOf(Generator(Hydrogen), Chip(Lithium), Generator(Lithium)))
+          ),
+          elevatorFloorNumber = 1
+      )
+
+      When("I ask if the two states are equivalent") {
+        val statesAreEquivalent = state1.isEquivalentTo(state2)
+
+        Then("the answer should be no") {
+          statesAreEquivalent shouldBe false
+        }
+      }
+    }
+
+    Given("") {
       When("") {
         Then("") {
           val state1 = FacilityState.newInstance(
