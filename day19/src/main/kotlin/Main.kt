@@ -2,28 +2,16 @@ class Main {
 
   companion object {
     @JvmStatic fun main(args: Array<String>) {
-      val input = 3005290
+      val whiteElephantGame = WhiteElephantGame(numberOfElves = 3005290)
 
-      var elvesWithPresents = (1..input).toList()
-      println(elvesWithPresents)
+      println("Part 1: ${whiteElephantGame.computeWinnerUsingV1Rules}")
 
-      while (elvesWithPresents.size > 1) {
-        val updatedElvesWithPresents = mutableListOf<Int>()
+//      // Run this loop to see an illustration of the pattern used to compute computeWinnerUsingV2Rules efficiently.
+//      for (numberOfElves in 2..100) {
+//        println("$numberOfElves elves -> elf ${WhiteElephantGame(numberOfElves).computeWinnerUsingV2Rules} wins")
+//      }
 
-        (0 until elvesWithPresents.size step 2).mapTo(updatedElvesWithPresents) { index ->
-          elvesWithPresents[index]
-        }
-
-        if (elvesWithPresents.size % 2 == 1) {
-          updatedElvesWithPresents.removeAt(updatedElvesWithPresents.lastIndex)
-          updatedElvesWithPresents.add(0, elvesWithPresents.last())
-        }
-
-        elvesWithPresents = updatedElvesWithPresents
-        println(elvesWithPresents.size)
-      }
-
-      println("Part 1: ${elvesWithPresents.first()}")
+      println("Part 2: ${whiteElephantGame.computeWinnerUsingV2Rules}")
     }
   }
 
