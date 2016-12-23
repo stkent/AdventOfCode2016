@@ -18,60 +18,48 @@ class Computer(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
   val valueInRegisterA: Int
     get() = registers['a']!!
 
-  fun processInstructions(instructionStrings: List<String>) {
-    val instructions = instructionStrings.map { instructionString -> Instruction.parse(instructionString) }
-
+  fun processInstructions(instructions: List<Instruction>) {
     var instructionIndex = 0
 
     while (instructionIndex < instructions.size) {
-      instructionIndex += applyInstruction(instructions[instructionIndex])
+      updateRegisterValues(instructions[instructionIndex])
+      instructionIndex += computeNextInstructionIndexOffset(instructions[instructionIndex])
     }
   }
 
-  /**
-   * @return the number of instructions to move; typically 1, unless we're parsing a jump instruction.
-   */
-  private fun applyInstruction(instruction: Instruction): Int {
+  private fun updateRegisterValues(instruction: Instruction) {
     when (instruction) {
       is IncrementInstruction -> {
         registers.put(instruction.targetRegisterName, registers[instruction.targetRegisterName]!! + 1)
-        return 1
       }
 
       is DecrementInstruction -> {
         registers.put(instruction.targetRegisterName, registers[instruction.targetRegisterName]!! - 1)
-        return 1
-      }
-
-      is RegisterBasedJumpInstruction -> {
-        val sourceRegisterValue = registers[instruction.sourceRegister]!!
-
-        return if (sourceRegisterValue != 0) {
-          instruction.jump
-        } else {
-          1
-        }
-      }
-
-      is ValueBasedJumpInstruction -> {
-        return if (instruction.value != 0) {
-          instruction.jump
-        } else {
-          1
-        }
       }
 
       is CopyInstruction -> {
         registers.put(instruction.targetRegisterName, registers[instruction.sourceRegisterName]!!)
-        return 1
       }
 
       is WriteInstruction -> {
         registers.put(instruction.targetRegisterName, instruction.value)
-        return 1
+      }
+    }
+  }
+
+  private fun computeNextInstructionIndexOffset(instruction: Instruction): Int {
+    when (instruction) {
+      is RegisterBasedJumpInstruction -> {
+        val sourceRegisterValue = registers[instruction.sourceRegister]!!
+
+        return if (sourceRegisterValue != 0) instruction.jump else 1
       }
 
-      else -> throw IllegalArgumentException("This instruction is not recognized!")
+      is ValueBasedJumpInstruction -> {
+        return if (instruction.value != 0) instruction.jump else 1
+      }
+
+      else -> return 1
     }
   }
 

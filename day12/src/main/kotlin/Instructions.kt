@@ -7,23 +7,23 @@ interface Instruction {
 
         instructionString.startsWith("dec") -> DecrementInstruction(instructionString.last())
 
+        instructionString.startsWith("cpy") -> {
+          val components = instructionString.split(Regex("\\s"))
+
+          try {
+            WriteInstruction(components[2].first(), components[1].toInt())
+          } catch (ignored: NumberFormatException) {
+            CopyInstruction(components[1].first(), components[2].first())
+          }
+        }
+
         instructionString.startsWith("jnz") -> {
           val components = instructionString.split(Regex("\\s"))
 
           try {
             ValueBasedJumpInstruction(components[1].toInt(), components[2].toInt())
           } catch (ignored: NumberFormatException) {
-            RegisterBasedJumpInstruction(components[1].toCharArray().first(), components[2].toInt())
-          }
-        }
-
-        instructionString.startsWith("cpy") -> {
-          val components = instructionString.split(Regex("\\s"))
-
-          try {
-            WriteInstruction(components[2].toCharArray().first(), components[1].toInt())
-          } catch (ignored: NumberFormatException) {
-            CopyInstruction(components[1].toCharArray().first(), components[2].toCharArray().first())
+            RegisterBasedJumpInstruction(components[1].first(), components[2].toInt())
           }
         }
 
@@ -34,13 +34,17 @@ interface Instruction {
 
 }
 
-data class WriteInstruction(val targetRegisterName: Char, val value: Int) : Instruction
-
-data class CopyInstruction(val sourceRegisterName: Char, val targetRegisterName: Char) : Instruction
+// Single argument instructions
 
 data class IncrementInstruction(val targetRegisterName: Char) : Instruction
 
 data class DecrementInstruction(val targetRegisterName: Char) : Instruction
+
+// Double argument instructions
+
+data class WriteInstruction(val targetRegisterName: Char, val value: Int) : Instruction
+
+data class CopyInstruction(val sourceRegisterName: Char, val targetRegisterName: Char) : Instruction
 
 data class RegisterBasedJumpInstruction(val sourceRegister: Char, val jump: Int) : Instruction
 

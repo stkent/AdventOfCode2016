@@ -5,16 +5,16 @@ class ComputerTests : BehaviorSpec() {
   init {
     Given("a Computer whose registers all have initial value 0") {
       When("I process the sample instructions") {
-        Then("register a should contain the value 42") {
+        Then("register 'a' should contain the value 42") {
           val computer = Computer()
 
           computer.processInstructions(listOf(
-              "cpy 41 a",
-              "inc a",
-              "inc a",
-              "dec a",
-              "jnz a 2",
-              "dec a"
+              WriteInstruction('a', 41),
+              IncrementInstruction('a'),
+              IncrementInstruction('a'),
+              DecrementInstruction('a'),
+              RegisterBasedJumpInstruction('a', 2),
+              DecrementInstruction('a')
           ))
 
           computer.valueInRegisterA shouldBe 42
