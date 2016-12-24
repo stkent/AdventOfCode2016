@@ -1,4 +1,3 @@
-import java.io.File
 import java.io.PrintWriter
 
 class Keypad(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
