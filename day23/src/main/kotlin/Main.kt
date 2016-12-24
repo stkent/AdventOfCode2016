@@ -19,12 +19,13 @@ class Main {
       /*
        * Check day23/part_1_executions.txt for a list of all instructions executed while solving part 1. Then run
        * day23/part_1_instruction_execution_counts.sh to see how many times the instruction at each index was executed.
-       * Manual inspection of this output leads to the manually-optimized input used to solve part 2 in a reasonable
-       * length of time.
+       * Manual inspection of this output and optimization of the input (replacing increment/decrement instructions that
+       * are executed many times by a multiplicative instruction that is executed once) could be used to significantly
+       * reduce the time needed to run part 2.
        */
-//      val keypad2 = Keypad(a = 12)
-//      keypad2.processInstructions(instructions)
-//      println("Part 2: ${keypad2.valueInRegisterA}")
+      val keypad2 = Keypad(a = 12)
+      keypad2.processInstructions(instructions)
+      println("Part 2: ${keypad2.valueInRegisterA}")
     }
   }
 

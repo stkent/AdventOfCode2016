@@ -1,8 +1,8 @@
 import java.io.PrintWriter
 
-class Keypad(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
+class Keypad(a: Long = 0, b: Long = 0, c: Long = 0, d: Long = 0) {
 
-  private val registers: MutableMap<Char, Int>
+  private val registers: MutableMap<Char, Long>
 
   init {
     registers = mutableMapOf(
@@ -17,7 +17,7 @@ class Keypad(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
     return registers.toString()
   }
 
-  val valueInRegisterA: Int
+  val valueInRegisterA: Long
     get() = registers['a']!!
 
   fun processInstructions(initialInstructions: List<Instruction>, printWriter: PrintWriter? = null) {
@@ -58,7 +58,7 @@ class Keypad(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
         val targetRegisterName = instruction.secondArg.first()
 
         try {
-          val value = instruction.firstArg.toInt()
+          val value = instruction.firstArg.toLong()
           registers.put(targetRegisterName, value)
         } catch (exception: NumberFormatException) {
           val sourceRegisterName = instruction.firstArg.first()
@@ -75,7 +75,7 @@ class Keypad(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
 
     when (currentInstruction) {
       is ToggleInstruction -> {
-        val indexToToggle = currentInstructionIndex + registers[currentInstruction.targetRegisterName]!!
+        val indexToToggle = currentInstructionIndex + registers[currentInstruction.targetRegisterName]!!.toInt()
 
         if (indexToToggle > instructions.lastIndex) {
           return instructions
@@ -101,13 +101,13 @@ class Keypad(a: Int = 0, b: Int = 0, c: Int = 0, d: Int = 0) {
             val controlValue = try {
               instruction.firstArg.toInt()
             } catch (exception: NumberFormatException) {
-              registers[instruction.firstArg.first()]!!
+              registers[instruction.firstArg.first()]!!.toInt()
             }
 
             val jumpAmount = try {
               instruction.secondArg.toInt()
             } catch (exception: NumberFormatException) {
-              registers[instruction.secondArg.first()]!!
+              registers[instruction.secondArg.first()]!!.toInt()
             }
 
             if (controlValue != 0) jumpAmount else 1
