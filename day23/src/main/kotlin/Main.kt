@@ -11,10 +11,10 @@ class Main {
 
       val part1PrintWriter = File("day23/part_1_executions.txt").printWriter()
 
-      val keypad = Keypad(a = 7)
-      keypad.processInstructions(instructions, printWriter = part1PrintWriter)
+      val computer = Computer(a = 7)
+      computer.processInstructions(instructions, printWriter = part1PrintWriter)
       part1PrintWriter.close()
-      println("Part 1: ${keypad.valueInRegisterA}")
+      println("Part 1: ${computer.valueInRegisterA}")
 
       /*
        * Check day23/part_1_executions.txt for a list of all instructions executed while solving part 1. Then run
@@ -23,9 +23,9 @@ class Main {
        * are executed many times by a multiplicative instruction that is executed once) could be used to significantly
        * reduce the time needed to run part 2.
        */
-      val keypad2 = Keypad(a = 12)
-      keypad2.processInstructions(instructions)
-      println("Part 2: ${keypad2.valueInRegisterA}")
+      val computer2 = Computer(a = 12)
+      computer2.processInstructions(instructions)
+      println("Part 2: ${computer2.valueInRegisterA}")
     }
   }
 

@@ -1,6 +1,6 @@
 import java.io.PrintWriter
 
-class Keypad(a: Long = 0, b: Long = 0, c: Long = 0, d: Long = 0) {
+class Computer(a: Long = 0, b: Long = 0, c: Long = 0, d: Long = 0) {
 
   private val registers: MutableMap<Char, Long>
 
