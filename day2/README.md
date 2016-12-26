@@ -6,7 +6,7 @@ You arrive at Easter Bunny Headquarters under cover of darkness. However, you le
 
 "In order to improve security," the document you find says, "bathroom codes will no longer be written down. Instead, please memorize and follow the procedure below to access the bathrooms."
 
-The document goes on to explain that each button to be pressed can be found by starting on the previous button and moving to adjacent buttons on the keypad: `U` moves up, `D` moves down, `L` moves left, and `R` moves right. Each line of rawInstructions corresponds to one button, starting at the previous button (or, for the first line, the "5" button); press whatever button you're on at the end of each line. If a move doesn't lead to a button, ignore it.
+The document goes on to explain that each button to be pressed can be found by starting on the previous button and moving to adjacent buttons on the keypad: `U` moves up, `D` moves down, `L` moves left, and `R` moves right. Each line of instructions corresponds to one button, starting at the previous button (or, for the first line, the "5" button); press whatever button you're on at the end of each line. If a move doesn't lead to a button, ignore it.
 
 You can't hold it much longer, so you decide to figure out the code as you walk to the bathroom. You picture a keypad like this:
 
@@ -14,7 +14,7 @@ You can't hold it much longer, so you decide to figure out the code as you walk 
     4 5 6
     7 8 9
 
-Suppose your rawInstructions are:
+Suppose your instructions are:
 
     ULL
     RRDDD
@@ -28,7 +28,7 @@ Suppose your rawInstructions are:
 
 So, in this example, the bathroom code is 1985.
 
-Your puzzle input is the rawInstructions from the document you found at the front desk. What is the bathroom code?
+Your puzzle input is the instructions from the document you found at the front desk. What is the bathroom code?
 
 ## Part 2
 
@@ -40,7 +40,7 @@ You finally arrive at the bathroom (it's a several minute walk from the lobby so
       A B C
         D
 
-You still start at "5" and stop when you're at an edge, but given the same rawInstructions as above, the outcome is very different:
+You still start at "5" and stop when you're at an edge, but given the same instructions as above, the outcome is very different:
 
 - You start at "5" and don't move at all (up and left are both edges), ending at 5.
 - Continuing from "5", you move right twice and down three times (through "6", "7", "B", "D", "D"), ending at D.
@@ -49,4 +49,4 @@ You still start at "5" and stop when you're at an edge, but given the same rawIn
 
 So, given the actual keypad layout, the code would be 5DB3.
 
-Using the same rawInstructions in your puzzle input, what is the correct bathroom code?
+Using the same instructions in your puzzle input, what is the correct bathroom code?

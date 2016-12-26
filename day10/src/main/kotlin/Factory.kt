@@ -8,8 +8,8 @@ class Factory {
   // Note: based on the provided input structure, each output bin will only ever be assigned a single chip.
   val outputs = mutableMapOf<Int, Int>()
 
-  fun processInstructions(rawInstructions: List<String>) {
-    val instructions = rawInstructions.map { rawInstruction -> Instruction.parse(rawInstruction) }
+  fun processInstructions(instructionStrings: List<String>) {
+    val instructions = instructionStrings.map { instructionString -> Instruction.parse(instructionString) }
     val valueInstructions = instructions.filterIsInstance<ValueInstruction>()
     val distributionInstructions = instructions.filterIsInstance<DistributionInstruction>()
 

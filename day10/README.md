@@ -6,11 +6,11 @@ You come upon a factory in which many robots are zooming around handing small mi
 
 Upon closer examination, you notice that each bot only proceeds when it has two microchips, and once it does, it gives each one to a different bot or puts it in a marked "output" bin. Sometimes, indexedBots take microchips from "input" bins, too.
 
-Inspecting one of the microchips, it seems like they each contain a single number; the indexedBots must use some logic to decide what to do with each chip. You access the local control computer and download the indexedBots' rawInstructions (your puzzle input).
+Inspecting one of the microchips, it seems like they each contain a single number; the indexedBots must use some logic to decide what to do with each chip. You access the local control computer and download the indexedBots' instructions (your puzzle input).
 
-Some of the rawInstructions specify that a specific-valued microchip should be given to a specific bot; the rest of the rawInstructions indicate what a given bot should do with its lower-value or higher-value chip.
+Some of the instructions specify that a specific-valued microchip should be given to a specific bot; the rest of the instructions indicate what a given bot should do with its lower-value or higher-value chip.
 
-For example, consider the following rawInstructions:
+For example, consider the following instructions:
 
     value 5 goes to bot 2
     bot 2 gives low to bot 1 and high to bot 0
@@ -26,7 +26,7 @@ For example, consider the following rawInstructions:
 
 In the end, output bin 0 contains a value-5 microchip, output bin 1 contains a value-2 microchip, and output bin 2 contains a value-3 microchip. In this configuration, bot number 2 is responsible for comparing value-5 microchips with value-2 microchips.
 
-Based on your rawInstructions, what is the number of the bot that is responsible for comparing value-61 microchips with value-17 microchips?
+Based on your instructions, what is the number of the bot that is responsible for comparing value-61 microchips with value-17 microchips?
 
 ## Part 2
 
