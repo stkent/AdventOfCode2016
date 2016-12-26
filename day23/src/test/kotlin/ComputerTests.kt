@@ -20,7 +20,7 @@ class ComputerTests : BehaviorSpec() {
         val valueInRegisterA = computer.valueInRegisterA
 
         Then("register 'a' should contain the value 3") {
-          valueInRegisterA shouldBe 3
+          valueInRegisterA shouldBe 3.toLong()
         }
       }
     }
