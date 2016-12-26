@@ -18,13 +18,13 @@ fun String.allCharactersMatch(char: Char): Boolean {
   return all { it == char }
 }
 
-fun String.firstRepeatedChar(repetitions: Int): Char? {
-  if (repetitions > length) {
+fun String.firstRepeatedChar(minRepetitions: Int): Char? {
+  if (minRepetitions > length) {
     return null
   }
 
-  (0..length - repetitions).forEach { startIndex ->
-    if (substring(startIndex until startIndex + repetitions).allCharactersMatch()) {
+  (0..length - minRepetitions).forEach { startIndex ->
+    if (substring(startIndex until startIndex + minRepetitions).allCharactersMatch()) {
       return get(startIndex)
     }
   }
@@ -32,13 +32,13 @@ fun String.firstRepeatedChar(repetitions: Int): Char? {
   return null
 }
 
-fun String.containsRepeatedChar(char: Char, repetitions: Int): Boolean {
-  if (repetitions > length) {
+fun String.containsRepeatedChar(char: Char, minRepetitions: Int): Boolean {
+  if (minRepetitions > length) {
     return false
   }
 
-  (0..length - repetitions).forEach { startIndex ->
-    if (substring(startIndex until startIndex + repetitions).allCharactersMatch(char)) {
+  (0..length - minRepetitions).forEach { startIndex ->
+    if (substring(startIndex until startIndex + minRepetitions).allCharactersMatch(char)) {
       return true
     }
   }

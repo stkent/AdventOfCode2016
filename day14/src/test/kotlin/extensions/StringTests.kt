@@ -2,7 +2,7 @@ package extensions
 
 import io.kotlintest.specs.BehaviorSpec
 
-class String : BehaviorSpec() {
+class StringTests : BehaviorSpec() {
 
   init {
     Given("a string in which all characters match") {
