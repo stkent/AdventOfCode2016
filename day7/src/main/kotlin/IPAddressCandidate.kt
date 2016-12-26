@@ -73,7 +73,7 @@ private fun String.containsAbbaSequence(): Boolean {
 
 private fun String.getAbaSequences(): Set<AbaSequence> {
   if (length < 3) {
-    return setOf()
+    return emptySet()
   }
 
   return (0..length - 3)
@@ -85,7 +85,7 @@ private fun String.getAbaSequences(): Set<AbaSequence> {
 
 private fun String.getBabSequences(): Set<BabSequence> {
   if (length < 3) {
-    return setOf()
+    return emptySet()
   }
 
   return (0..length - 3)

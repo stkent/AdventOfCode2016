@@ -8,7 +8,7 @@ class FacilityStateTests : BehaviorSpec() {
     Given("") {
       val state = FacilityState.newInstance(
           floors = sortedMapOf(
-              Pair(4, setOf()),
+              Pair(4, emptySet()),
               Pair(3, setOf(Generator(Lithium))),
               Pair(2, setOf(Generator(Hydrogen))),
               Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
@@ -82,7 +82,7 @@ class FacilityStateTests : BehaviorSpec() {
         Then("") {
           val state1 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(4, setOf()),
+                  Pair(4, emptySet()),
                   Pair(3, setOf(Generator(Lithium))),
                   Pair(2, setOf(Generator(Hydrogen))),
                   Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
@@ -92,7 +92,7 @@ class FacilityStateTests : BehaviorSpec() {
 
           val state2 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(4, setOf()),
+                  Pair(4, emptySet()),
                   Pair(3, setOf(Generator(Lithium))),
                   Pair(2, setOf(Generator(Hydrogen))),
                   Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
@@ -110,7 +110,7 @@ class FacilityStateTests : BehaviorSpec() {
         Then("") {
           val state1 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(4, setOf()),
+                  Pair(4, emptySet()),
                   Pair(3, setOf(Generator(Lithium))),
                   Pair(2, setOf(Generator(Hydrogen))),
                   Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
@@ -121,7 +121,7 @@ class FacilityStateTests : BehaviorSpec() {
           val state2 = FacilityState.newInstance(
               floors = sortedMapOf(
                   Pair(4, setOf(Generator(Lithium))),
-                  Pair(3, setOf()),
+                  Pair(3, emptySet()),
                   Pair(2, setOf(Generator(Hydrogen))),
                   Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
               ),
@@ -138,7 +138,7 @@ class FacilityStateTests : BehaviorSpec() {
         Then("") {
           val state1 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(4, setOf()),
+                  Pair(4, emptySet()),
                   Pair(3, setOf(Generator(Lithium))),
                   Pair(2, setOf(Generator(Hydrogen))),
                   Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
@@ -148,7 +148,7 @@ class FacilityStateTests : BehaviorSpec() {
 
           val state2 = FacilityState.newInstance(
               floors = sortedMapOf(
-                  Pair(4, setOf()),
+                  Pair(4, emptySet()),
                   Pair(3, setOf(Generator(Hydrogen))),
                   Pair(2, setOf(Generator(Lithium))),
                   Pair(1, setOf(Chip(Hydrogen), Chip(Lithium)))
