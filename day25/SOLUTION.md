@@ -173,7 +173,7 @@ then the first time we reach instruction 27, the updated register values will be
 
     | ⌊(a0 + 2532)/2⌋|   (a0 % 2)|            0|  a0 + 2532|
 
-Thus `a0 % 2` is our first output value. Per the puzzle instructions, this must be a `0`, so `a0 + 2532` must be even
+Thus `a0 % 2` is our first output value. Per the puzzle description, this must be a `0`, so `a0 + 2532` must be even
 
 What happens next? If we inspect instructions 28 and 29
 
@@ -189,7 +189,7 @@ In case 1, we resume execution from instruction 9 with register `a` holding the 
 
     ⌊(a0 + 2532)/2⌋ % 2
 
-Per the puzzle instructions, this must be a `1`, so ` ⌊(a0 + 2532)/2⌋` must be odd. Similarly, `⌊(a0 + 2532)/4⌋` must be even, `⌊(a0 + 2532)/8⌋` must be odd, etc.
+Per the puzzle description, this must be a `1`, so ` ⌊(a0 + 2532)/2⌋` must be odd. Similarly, `⌊(a0 + 2532)/4⌋` must be even, `⌊(a0 + 2532)/8⌋` must be odd, etc.
 
 Eventually, we will reach a loop count `n` such that `⌊(a0 + 2532)/2^n⌋ = 0` (case 2). When this happens, the value in register `a` is reset to `a0 + 2532` by instruction 8, and we resume the 'inner loop' between instructions 9 and 28 detailed above.
 
