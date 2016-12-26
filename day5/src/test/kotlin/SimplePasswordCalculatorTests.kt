@@ -1,7 +1,7 @@
 import io.kotlintest.specs.BehaviorSpec
 
-class SimplePasswordCalculatorTest : BehaviorSpec() {
-  
+class SimplePasswordCalculatorTests : BehaviorSpec() {
+
   init {
     Given("the password seed \"abc\"") {
       When("I calculate the generated password of length 8") {
@@ -11,5 +11,5 @@ class SimplePasswordCalculatorTest : BehaviorSpec() {
       }
     }
   }
-  
+
 }

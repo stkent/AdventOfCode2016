@@ -2,7 +2,7 @@ import RotationDirection.LEFT
 import RotationDirection.RIGHT
 import io.kotlintest.specs.BehaviorSpec
 
-class NavigatorTest : BehaviorSpec() {
+class NavigatorTests : BehaviorSpec() {
 
   init {
     Given("a Navigator") {

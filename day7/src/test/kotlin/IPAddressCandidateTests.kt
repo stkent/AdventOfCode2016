@@ -1,6 +1,6 @@
 import io.kotlintest.specs.BehaviorSpec
 
-class IPAddressCandidateTest : BehaviorSpec() {
+class IPAddressCandidateTests : BehaviorSpec() {
 
   init {
     Given("") {

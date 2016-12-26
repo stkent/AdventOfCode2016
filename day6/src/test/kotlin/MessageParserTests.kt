@@ -1,6 +1,6 @@
 import io.kotlintest.specs.BehaviorSpec
 
-class MessageParserTest : BehaviorSpec() {
+class MessageParserTests : BehaviorSpec() {
 
   init {
     Given("the relatively short sequence of received messages provided in the problem statement") {

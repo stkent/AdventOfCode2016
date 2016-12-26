@@ -2,7 +2,7 @@ import RotationDirection.LEFT
 import RotationDirection.RIGHT
 import io.kotlintest.specs.BehaviorSpec
 
-class InstructionTest : BehaviorSpec() {
+class InstructionTests : BehaviorSpec() {
 
   init {
     Given("the instruction String \"R1\"") {

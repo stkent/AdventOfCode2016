@@ -1,7 +1,7 @@
 import io.kotlintest.specs.BehaviorSpec
 
-class BaseTriangleCheckerTest : BehaviorSpec() {
-  
+class BaseTriangleCheckerTests : BehaviorSpec() {
+
   init {
     Given("a BaseTriangleChecker") {
       When("I check all permutations of a list of valid triangle side lengths") {
@@ -31,5 +31,5 @@ class BaseTriangleCheckerTest : BehaviorSpec() {
       }
     }
   }
-  
+
 }

@@ -1,7 +1,7 @@
 import io.kotlintest.specs.BehaviorSpec
 
-class RoomCandidateTest : BehaviorSpec() {
-  
+class RoomCandidateTests : BehaviorSpec() {
+
   init {
     Given("the room name string \"aaaaa-bbb-z-y-x-123[abxyz]\"") {
       When("I ask if it represents a real room") {
@@ -49,5 +49,5 @@ class RoomCandidateTest : BehaviorSpec() {
       }
     }
   }
-  
+
 }
