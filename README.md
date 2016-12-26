@@ -8,7 +8,7 @@ I'm an Android developer who has dabbled with Kotlin intermittently in side proj
 
 - Continue to explore the Kotlin standard library;
 - Focus on producing communicative, idiomatic, and well-structured solutions over high-performance solutions;
-- Write high-quality tests using one of the popular Kotlin testing libraries, [KotlinTest](https://github.com/kotlintest/kotlintest).
+- Write high-quality tests using one of the popular Kotlin testing libraries, [KotlinTest](https://github.com/kotlintest/kotlintest). Test cases are typically inspired by the examples presented as part of each puzzle.
 
 # Instructions
 
@@ -26,6 +26,6 @@ Specific day, e.g. 14:
 
 Individual IntelliJ IDEA run configurations for each day are included in this repository and should be available for use after importing the project. Code was originally written using IntelliJ IDEA 2016.3.1, Build #IU-163.9166.29.
 
-Note that some solutions include manual scratch work. The code for those days may only solve a subset of the original problem.
+Note that some solutions include manual scratch work. The code for those days may only solve a subset of the original puzzle.
 
 Note too that a few solutions take O(hours) to run.
