@@ -24,14 +24,18 @@ class MessageParserTests : BehaviorSpec() {
       )
 
       When("I calculate the real message by determining the highest frequency character at each index") {
+        val realMessage = MessageParser(receivedMessages).parseUsingHighestFrequencyCharacters()
+
         Then("the result is \"easter\"") {
-          MessageParser(receivedMessages).parseUsingHighestFrequencyCharacters() shouldBe "easter"
+          realMessage shouldBe "easter"
         }
       }
 
       When("I calculate the real message by determining the lowest frequency character at each index") {
+        val realMessage = MessageParser(receivedMessages).parseUsingLowestFrequencyCharacters()
+
         Then("the result is \"advent\"") {
-          MessageParser(receivedMessages).parseUsingLowestFrequencyCharacters()  shouldBe "advent"
+          realMessage shouldBe "advent"
         }
       }
     }
