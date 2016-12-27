@@ -29,8 +29,12 @@ Since the robot isn't very fast, you need to find it the shortest route. This pa
 
 Given your actual map, and starting from location `0`, what is the fewest number of steps required to visit every non-`0` number marked on the map at least once?
 
+> Your puzzle answer was `498`.
+
 ## Part 2
 
 Of course, if you leave the cleaning robot somewhere weird, someone is bound to notice.
 
 What is the fewest number of steps required to start at `0`, visit every non-`0` number marked on the map at least once, and then return to `0`?
+
+> Your puzzle answer was `804`.

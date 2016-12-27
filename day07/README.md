@@ -15,6 +15,8 @@ For example:
 
 How many IPs in your puzzle input support TLS?
 
+> Your puzzle answer was `118`.
+
 ## Part 2
 
 You would also like to know which IPs support SSL (super-secret listening).
@@ -29,3 +31,5 @@ For example:
 - `zazbz[bzb]cdb` supports SSL (`zaz` has no corresponding `aza`, but `zbz` has a corresponding `bzb`, even though `zaz` and `zbz` overlap).
 
 How many IPs in your puzzle input support SSL?
+
+> Your puzzle answer was `260`.

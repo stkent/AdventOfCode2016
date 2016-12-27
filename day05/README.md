@@ -18,6 +18,8 @@ In this example, after continuing this search a total of eight times, the passwo
 
 Given the actual Door ID, what is the password?
 
+> Your puzzle answer was `4543c154`.
+
 ## Part 2
 
 As the door slides open, you are presented with a second door that uses a slightly more inspired security mechanism. Clearly unimpressed by the last version (in what movie is the password decrypted in order?!), the Easter Bunny engineers have worked out a better solution.
@@ -35,3 +37,5 @@ For example, if the Door ID is `abc`:
 You almost choke on your popcorn as the final character falls into place, producing the password `05ace8e3`.
 
 Given the actual Door ID and this new method, what is the password? Be extra proud of your solution if it uses a cinematic "decrypting" animation.
+
+> Your puzzle answer was `1050cbbd`.

@@ -26,9 +26,11 @@ Suppose your instructions are:
 - Continuing from "9", you move left, up, right, down, and left, ending with 8.
 - Finally, you move up four times (stopping at "2"), then down once, ending with 5.
 
-So, in this example, the bathroom code is 1985.
+So, in this example, the bathroom code is `1985`.
 
 Your puzzle input is the instructions from the document you found at the front desk. What is the bathroom code?
+
+> Your puzzle answer was `65556`.
 
 ## Part 2
 
@@ -47,6 +49,8 @@ You still start at "5" and stop when you're at an edge, but given the same instr
 - Then, from "D", you move five more times (through "D", "B", "C", "C", "B"), ending at B.
 - Finally, after five more moves, you end at 3.
 
-So, given the actual keypad layout, the code would be 5DB3.
+So, given the actual keypad layout, the code would be `5DB3`.
 
 Using the same instructions in your puzzle input, what is the correct bathroom code?
+
+> Your puzzle answer was `CB779`.

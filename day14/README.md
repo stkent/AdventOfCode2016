@@ -24,6 +24,8 @@ So, using our example salt of `abc`, index 22728 produces the 64th key.
 
 Given the actual salt in your puzzle input, what index produces your 64th one-time pad key?
 
+> Your puzzle answer was `23769`.
+
 ## Part 2
 
 Of course, in order to make this process even more secure, you've also implemented key stretching.
@@ -49,3 +51,5 @@ The rest of the process remains the same, but now the keys are entirely differen
 - Eventually, index 22551 produces the 64th key (triple `fff` with matching `fffff` at index 22859.
 
 Given the actual salt in your puzzle input and using 2016 extra MD5 calls of key stretching, what index now produces your 64th one-time pad key?
+
+> Your puzzle answer was `20606`.
