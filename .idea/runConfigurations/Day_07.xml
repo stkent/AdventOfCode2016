@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Day 9" type="JetRunConfigurationType" factoryName="Kotlin">
+  <configuration default="false" name="Day 07" type="JetRunConfigurationType" factoryName="Kotlin">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="Main" />
     <option name="VM_PARAMETERS" value="" />
@@ -8,7 +8,7 @@
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <option name="PASS_PARENT_ENVS" value="true" />
-    <module name="day9_main" />
+    <module name="day07_main" />
     <envs />
     <method />
   </configuration>
