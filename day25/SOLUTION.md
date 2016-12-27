@@ -171,9 +171,9 @@ Instruction 27 is the `out` instruction that emits a value. Per the trace above,
 
 then the first time we reach instruction 27, the updated register values will be
 
-    | ⌊(a0 + 2532)/2⌋|   (a0 % 2)|            0|  a0 + 2532|
+    | ⌊(a0 + 2532)/2⌋|     a0 % 2|            0|  a0 + 2532|
 
-Thus `a0 % 2` is our first output value. Per the puzzle description, this must be a `0`, so `a0 + 2532` must be even
+Thus `a0 % 2` is our first output value. Per the puzzle description, this must be a `0`, so `a0` must be even. (Equivalently, `a0 + 2532` must be even. The importance of this reformulation will become apparent shortly.)
 
 What happens next? If we inspect instructions 28 and 29
 
