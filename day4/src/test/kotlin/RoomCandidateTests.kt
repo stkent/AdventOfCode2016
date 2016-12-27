@@ -3,48 +3,70 @@ import io.kotlintest.specs.BehaviorSpec
 class RoomCandidateTests : BehaviorSpec() {
 
   init {
-    Given("the room name string \"aaaaa-bbb-z-y-x-123[abxyz]\"") {
+    Given("a room candidate with name \"aaaaa-bbb-z-y-x-123[abxyz]\"") {
+      val roomCandidate = RoomCandidate("aaaaa-bbb-z-y-x-123[abxyz]")
+
       When("I ask if it represents a real room") {
-        Then("the answer should be \"true\"") {
-          RoomCandidate("aaaaa-bbb-z-y-x-123[abxyz]").isARealRoom() shouldBe true
+        val representsRealRoom = roomCandidate.isARealRoom()
+
+        Then("the answer should be true") {
+          representsRealRoom shouldBe true
         }
       }
     }
 
-    Given("the room name string \"a-b-c-d-e-f-g-h-987[abcde]\"") {
+    Given("a room candidate with name \"a-b-c-d-e-f-g-h-987[abcde]\"") {
+      val roomCandidate = RoomCandidate("a-b-c-d-e-f-g-h-987[abcde]")
+
       When("I ask if it represents a real room") {
-        Then("the answer should be \"true\"") {
-          RoomCandidate("a-b-c-d-e-f-g-h-987[abcde]").isARealRoom() shouldBe true
+        val representsRealRoom = roomCandidate.isARealRoom()
+
+        Then("the answer should be true") {
+          representsRealRoom shouldBe true
         }
       }
     }
 
-    Given("the room name string \"not-a-real-room-404[oarel]\"") {
+    Given("a room candidate with name \"not-a-real-room-404[oarel]\"") {
+      val roomCandidate = RoomCandidate("not-a-real-room-404[oarel]")
+
       When("I ask if it represents a real room") {
-        Then("the answer should be \"true\"") {
-          RoomCandidate("not-a-real-room-404[oarel]").isARealRoom() shouldBe true
+        val representsRealRoom = roomCandidate.isARealRoom()
+
+        Then("the answer should be true") {
+          representsRealRoom shouldBe true
         }
       }
     }
 
-    Given("the room name string \"totally-real-room-200[decoy]\"") {
+    Given("a room candidate with name \"totally-real-room-200[decoy]\"") {
+      val roomCandidate = RoomCandidate("totally-real-room-200[decoy]")
+
       When("I ask if it represents a real room") {
-        Then("the answer should be \"false\"") {
-          RoomCandidate("totally-real-room-200[decoy]").isARealRoom() shouldBe false
+        val representsRealRoom = roomCandidate.isARealRoom()
+
+        Then("the answer should be false") {
+          representsRealRoom shouldBe false
         }
       }
     }
 
-    Given("the room name string \"qzmt-zixmtkozy-ivhz-343[zimth]\"") {
+    Given("a room candidate with name \"qzmt-zixmtkozy-ivhz-343[zimth]\"") {
+      val roomCandidate = RoomCandidate("qzmt-zixmtkozy-ivhz-343[zimth]")
+
       When("I ask if it represents a real room") {
-        Then("the answer should be \"true\"") {
-          RoomCandidate("qzmt-zixmtkozy-ivhz-343[zimth]").isARealRoom() shouldBe true
+        val representsRealRoom = roomCandidate.isARealRoom()
+
+        Then("the answer should be true") {
+          representsRealRoom shouldBe true
         }
       }
 
-      When("I ask for the decoded room name") {
+      When("I ask for the decrypted room name") {
+        val decryptedRoomName = roomCandidate.getDecryptedRoomName()
+
         Then("the answer should be \"very encrypted name\"") {
-          RoomCandidate("qzmt-zixmtkozy-ivhz-343[zimth]").getDecryptedRoomName() shouldBe "very encrypted name"
+          decryptedRoomName shouldBe "very encrypted name"
         }
       }
     }
