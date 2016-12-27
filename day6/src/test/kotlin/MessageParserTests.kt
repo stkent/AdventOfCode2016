@@ -3,7 +3,7 @@ import io.kotlintest.specs.BehaviorSpec
 class MessageParserTests : BehaviorSpec() {
 
   init {
-    Given("the relatively short sequence of received messages provided in the problem statement") {
+    Given("the relatively short sequence of received messages provided in the puzzle statement") {
       val receivedMessages = listOf(
           "eedadn",
           "drvtee",
