@@ -5,10 +5,12 @@ class InstructionTests : BehaviorSpec() {
 
   init {
     Given("a rect instruction String") {
-      When("I parse that String into an Instruction") {
-        Then("I get an Instruction of the correct type with the correct rect width and rect height data") {
-          val instruction = Instruction.parse("rect 3x2")
+      val instructionString = "rect 3x2"
 
+      When("I parse that String into an Instruction") {
+        val instruction = Instruction.parse(instructionString)
+
+        Then("I get an Instruction of the correct type with the correct rect width and rect height data") {
           instruction should be a RectInstruction::class
           (instruction as RectInstruction)
 
@@ -19,10 +21,12 @@ class InstructionTests : BehaviorSpec() {
     }
 
     Given("a rotate row instruction String") {
-      When("I parse that String into an Instruction") {
-        Then("I get an Instruction of the correct type with the correct row number and rotation amount") {
-          val instruction = Instruction.parse("rotate row y=1 by 2")
+      val instructionString = "rotate row y=1 by 2"
 
+      When("I parse that String into an Instruction") {
+        val instruction = Instruction.parse(instructionString)
+
+        Then("I get an Instruction of the correct type with the correct row number and rotation amount") {
           instruction should be a RotateRowInstruction::class
           (instruction as RotateRowInstruction)
 
@@ -33,10 +37,12 @@ class InstructionTests : BehaviorSpec() {
     }
 
     Given("a rotate column instruction String") {
-      When("I parse that String into an Instruction") {
-        Then("I get an Instruction of the correct type with the correct column number and rotation amount") {
-          val instruction = Instruction.parse("rotate column x=1 by 2")
+      val instructionString = "rotate column x=1 by 2"
 
+      When("I parse that String into an Instruction") {
+        val instruction = Instruction.parse(instructionString)
+
+        Then("I get an Instruction of the correct type with the correct column number and rotation amount") {
           instruction should be a RotateColumnInstruction::class
           (instruction as RotateColumnInstruction)
 
