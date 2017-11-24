@@ -2,7 +2,10 @@
 
 Kotlin tests and solutions for the [2016 puzzles](http://adventofcode.com/2016).
 
-I'm an Android developer who has dabbled with Kotlin intermittently in side projects. Just as with Python [last year](https://github.com/stkent/AdventOfCode2015), my focus was on learning more about my chosen language and its ecosystem!
+Other years' solutions:
+
+- [2017 (Kotlin)](https://github.com/stkent/AdventOfCode2017)
+- [2015 (Python)](https://github.com/stkent/AdventOfCode2015)
 
 # Objectives
 
