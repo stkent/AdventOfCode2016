@@ -1,6 +1,6 @@
 # Day 4: Security Through Obscurity
 
-## Part 1
+## Part One
 
 Finally, you come across an information kiosk with a list of rooms. Of course, the list is encrypted and full of decoy data, but the instructions to decode the list are barely hidden nearby. Better remove the decoy data first.
 
@@ -19,7 +19,7 @@ What is the sum of the sector IDs of the real rooms?
 
 > Your puzzle answer was `245102`.
 
-## Part 2
+## Part Two
 
 With all the decoy data out of the way, it's time to decrypt this list and get moving.
 

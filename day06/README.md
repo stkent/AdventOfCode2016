@@ -1,6 +1,6 @@
 # Day 6: Signals and Noise
 
-## Part 1
+## Part One
 
 Something is jamming your communications with Santa. Fortunately, your signal is only partially jammed, and protocol in situations like this is to switch to a simple repetition code to get the message through.
 
@@ -31,7 +31,7 @@ Given the recording in your puzzle input, what is the error-corrected version of
 
 > Your puzzle answer was `asvcbhvg`.
 
-## Part 2
+## Part Two
 
 Of course, that would be the message - if you hadn't agreed to use a modified repetition code instead.
 

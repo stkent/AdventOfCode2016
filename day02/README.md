@@ -1,6 +1,6 @@
 # Day 2: Bathroom Security
 
-## Part 1
+## Part One
 
 You arrive at Easter Bunny Headquarters under cover of darkness. However, you left in such a rush that you forgot to use the bathroom! Fancy office buildings like this one usually have keypad locks on their bathrooms, so you search the front desk for the code.
 
@@ -32,7 +32,7 @@ Your puzzle input is the instructions from the document you found at the front d
 
 > Your puzzle answer was `65556`.
 
-## Part 2
+## Part Two
 
 You finally arrive at the bathroom (it's a several minute walk from the lobby so visitors can behold the many fancy conference rooms and water coolers on this floor) and go to punch in the code. Much to your bladder's dismay, the keypad is not at all like you imagined it. Instead, you are confronted with the result of hundreds of man-hours of bathroom-keypad-design meetings:
 

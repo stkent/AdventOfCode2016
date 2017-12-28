@@ -1,6 +1,6 @@
 # Day 22: Grid Computing
 
-## Part 1
+## Part One
 
 You gain access to a massive storage cluster arranged in a grid; each storage node is only connected to the four nodes directly adjacent to it (three if the node is on an edge, two if it's in a corner).
 
@@ -23,7 +23,7 @@ How many viable pairs of nodes are there?
 
 > Your puzzle answer was `872`.
 
-## Part 2
+## Part Two
 
 Now that you have a better understanding of the grid, it's time to get to work.
 

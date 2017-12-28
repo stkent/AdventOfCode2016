@@ -1,6 +1,6 @@
 # Day 15: Timing is Everything
 
-## Part 1
+## Part One
 
 The halls open into an interior plaza containing a large kinetic sculpture. The sculpture is in a sealed enclosure and seems to involve a set of identical spherical capsules that are carried to the top and allowed to bounce through the maze of spinning pieces.
 
@@ -27,7 +27,7 @@ However, your situation has more than two discs; you've noted their positions in
 
 > Your puzzle answer was `16824`.
 
-## Part 2
+## Part Two
 
 After getting the first capsule (it contained a star! what great fortune!), the machine detects your success and begins to rearrange itself.
 

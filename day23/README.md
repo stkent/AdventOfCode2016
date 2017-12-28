@@ -1,6 +1,6 @@
 # Day 23: Safe Cracking
 
-## Part 1
+## Part One
 
 This is one of the top floors of the nicest tower in EBHQ. The Easter Bunny's private office is here, complete with a safe hidden behind a painting, and who wouldn't hide a star in a safe behind a painting?
 
@@ -44,7 +44,7 @@ What value should be sent to the safe?
 
 > Your puzzle answer was `10500`.
 
-## Part 2
+## Part Two
 
 The safe doesn't open, but it does make several angry noises to express its frustration.
 

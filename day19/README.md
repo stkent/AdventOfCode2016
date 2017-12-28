@@ -1,6 +1,6 @@
 # Day 19: An Elephant Named Joseph
 
-## Part 1
+## Part One
 
 The Elves contact you over a highly secure emergency channel. Back at the North Pole, the Elves are busy misunderstanding White Elephant parties.
 
@@ -26,7 +26,7 @@ With the number of Elves given in your puzzle input, which Elf gets all the pres
 
 > Your puzzle answer was `1816277`.
 
-## Part 2
+## Part Two
 
 Realizing the folly of their present-exchange rules, the Elves agree to instead steal presents from the Elf directly across the circle. If two Elves are across the circle, the one on the left (from the perspective of the stealer) is stolen from. The other rules remain unchanged: Elves with no presents are removed from the circle entirely, and the other elves move in slightly to keep the circle evenly spaced.
 

@@ -1,6 +1,6 @@
 # Day 21: Scrambled Letters and Hash
 
-## Part 1
+## Part One
 
 The computer system you're breaking into uses a weird scrambling function to store its passwords. It shouldn't be much trouble to create your own scrambled password so you can add it to the system; you just have to implement the scrambler.
 
@@ -30,7 +30,7 @@ Now, you just need to generate a new scrambled password and you can access the s
 
 > Your puzzle answer was `gfdhebac`.
 
-## Part 2
+## Part Two
 
 You scrambled the password correctly, but you discover that you can't actually modify the password file on the system. You'll need to un-scramble one of the existing passwords by reversing the scrambling process.
 

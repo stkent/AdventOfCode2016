@@ -1,6 +1,6 @@
 # Day 10: Balance Bots
 
-## Part 1
+## Part One
 
 You come upon a factory in which many robots are zooming around handing small microchips to each other.
 
@@ -30,7 +30,7 @@ Based on your instructions, what is the number of the bot that is responsible fo
 
 > Your puzzle answer was `101`.
 
-## Part 2
+## Part Two
 
 What do you get if you multiply together the values of one chip in each of outputs 0, 1, and 2?
 

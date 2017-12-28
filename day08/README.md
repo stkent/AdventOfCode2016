@@ -1,6 +1,6 @@
 # Day 8: Two-Factor Authentication
 
-## Part 1
+## Part One
 
 You come across a door implementing what you can only assume is an implementation of two-factor authentication after a long game of requirements telephone.
 
@@ -46,7 +46,7 @@ There seems to be an intermediate check of the voltage used by the display: afte
 
 > Your puzzle answer was `106`.
 
-## Part 2
+## Part Two
 
 You notice that the screen is only capable of displaying capital letters; in the font it uses, each letter is 5 pixels wide and 6 tall.
 

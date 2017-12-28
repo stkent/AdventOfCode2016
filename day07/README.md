@@ -1,6 +1,6 @@
 # Day 7: Internet Protocol Version 7
 
-## Part 1
+## Part One
 
 While snooping around the local network of EBHQ, you compile a list of IP addresses (they're IPv7, of course; IPv6 is much too limited). You'd like to figure out which IPs support TLS (transport-layer snooping).
 
@@ -17,7 +17,7 @@ How many IPs in your puzzle input support TLS?
 
 > Your puzzle answer was `118`.
 
-## Part 2
+## Part Two
 
 You would also like to know which IPs support SSL (super-secret listening).
 

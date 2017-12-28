@@ -1,6 +1,6 @@
 # Day 13: A Maze of Twisty Little Cubicles
 
-## Part 1
+## Part One
 
 You arrive at the first floor of this new building to discover a much less welcoming environment than the shiny atrium of the last one. Instead, you are in a maze of twisty little cubicles, all alike.
 
@@ -42,7 +42,7 @@ What is the fewest number of steps required for you to reach `31,39`?
 
 > Your puzzle answer was `96`.
 
-## Part 2
+## Part Two
 
 How many locations (distinct `x,y` coordinates, including your starting location) can you reach in at most 50 steps?
 

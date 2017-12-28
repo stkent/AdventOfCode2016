@@ -1,6 +1,6 @@
 # Day 11: Radioisotope Thermoelectric Generators
 
-## Part 1
+## Part One
 
 You come upon a column of four floors that have been entirely sealed off from the rest of the building except for a small dedicated lobby. There are some radiation warnings and a big sign which reads "Radioisotope Testing Facility".
 
@@ -117,7 +117,7 @@ In your situation, what is the minimum number of steps required to bring all of 
 
 > Your puzzle answer was `31`.
 
-## Part 2
+## Part Two
 
 You step into the cleanroom separating the lobby from the isolated area and put on the hazmat suit.
 

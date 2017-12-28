@@ -1,6 +1,6 @@
 # Day 20: Firewall Rules
 
-## Part 1
+## Part One
 
 You'd like to set up a small hidden computer here so you can use it to get back into the network later. However, the corporate firewall only allows communication with certain external IP addresses.
 
@@ -18,7 +18,7 @@ Given the list of blocked IPs you retrieved from the firewall (your puzzle input
 
 > Your puzzle answer was `31053880`.
 
-## Part 2
+## Part Two
 
 How many IPs are allowed by the blacklist?
 

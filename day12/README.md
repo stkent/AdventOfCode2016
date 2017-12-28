@@ -1,6 +1,6 @@
 # Day 12: Leonardo's Monorail
 
-## Part 1
+## Part One
 
 You finally reach the top floor of this building: a garden with a slanted glass ceiling. Looks like there are no more stars to be had.
 
@@ -34,7 +34,7 @@ After executing the assembunny code in your puzzle input, what value is left in 
 
 > Your puzzle answer was `318007`.
 
-## Part 2
+## Part Two
 
 As you head down the fire escape to the monorail, you notice it didn't start; register `c` needs to be initialized to the position of the ignition key.
 

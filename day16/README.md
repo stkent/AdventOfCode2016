@@ -1,6 +1,6 @@
 # Day 16: Dragon Checksum
 
-## Part 1
+## Part One
 
 You're done scanning this part of the network, but you've left traces of your presence. You need to overwrite some disks with random-looking data to cover your tracks and update the local security system with a new checksum for those disks.
 
@@ -52,7 +52,7 @@ The first disk you have to fill has length `272`. Using the initial state in you
 
 > Your puzzle answer was `11101010111100010`.
 
-## Part 2
+## Part Two
 
 The second disk you have to fill has length `35651584`. Again using the initial state in your puzzle input, what is the correct checksum for this disk?
 

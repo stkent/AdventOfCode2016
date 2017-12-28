@@ -1,6 +1,6 @@
 # Day 14: One-Time Pad
 
-## Part 1
+## Part One
 
 In order to communicate securely with Santa while you're on this mission, you've been using a one-time pad that you generate using a pre-agreed algorithm. Unfortunately, you've run out of keys in your one-time pad, and so you need to generate some more.
 
@@ -26,7 +26,7 @@ Given the actual salt in your puzzle input, what index produces your 64th one-ti
 
 > Your puzzle answer was `23769`.
 
-## Part 2
+## Part Two
 
 Of course, in order to make this process even more secure, you've also implemented key stretching.
 

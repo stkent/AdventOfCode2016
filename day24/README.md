@@ -1,6 +1,6 @@
 # Day 24: Air Duct Spelunking
 
-## Part 1
+## Part One
 
 You've finally met your match; the doors that provide access to the roof are locked tight, and all of the controls and related electronics are inaccessible. You simply can't reach them.
 
@@ -31,7 +31,7 @@ Given your actual map, and starting from location `0`, what is the fewest number
 
 > Your puzzle answer was `498`.
 
-## Part 2
+## Part Two
 
 Of course, if you leave the cleaning robot somewhere weird, someone is bound to notice.
 

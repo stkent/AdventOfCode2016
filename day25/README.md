@@ -1,6 +1,6 @@
 # Day 25: Clock Signal
 
-## Part 1
+## Part One
 
 You open the door and find yourself on the roof. The city sprawls away from you for miles and miles.
 
@@ -30,7 +30,7 @@ What is the lowest positive integer that can be used to initialize register `a` 
 
 > Your puzzle answer was `198`.
 
-## Part 2
+## Part Two
 
 The antenna is ready. Now, all you need is the fifty stars required to generate the signal for the sleigh, but you don't have enough.
 
